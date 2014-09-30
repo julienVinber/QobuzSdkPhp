@@ -13,7 +13,7 @@ abstract class QobuzEntityRepository
 {
     protected $listeEntity;
 
-    const GLOBALBASENAME = 'JulienVinberQobuzEntityBaseQobuzEntityCollection_';
+    const GLOBALBASENAME = 'JulienVinberQobuzEntityBaseQobuzEntityRepository_';
 
     function __construct()
     {
@@ -28,6 +28,7 @@ abstract class QobuzEntityRepository
         } else{
             $this->listeEntity[] = $entity;
         }
+        return $entity;
     }
 
     static public function getInstance()
@@ -40,7 +41,7 @@ abstract class QobuzEntityRepository
         return $GLOBALS[$globalName];
     }
 
-    static public function get($id)
+    static public function getById($id)
     {
         $instance = self::getInstance();
         foreach ($instance->listeEntity as $entity) {
@@ -48,7 +49,29 @@ abstract class QobuzEntityRepository
                 return $entity;
             }
         }
+        return null;
     }
 
-    abstract public function isEntityType($entity);
+    static public function getOrCreate($jsonObject)
+    {
+        $entity = null;
+        $instance = self::getInstance();
+        if($jsonObject->id){
+            $entity = $instance->getById($jsonObject->id);
+            if (!is_null($entity)){
+                $className = self::getEntityName();
+                $entity = new $className($jsonObject);
+            }
+            $instance->add($entity);
+            return $entity;
+        }
+        return null;
+    }
+
+    static public function isEntityType($entity)
+    {
+        return is_a($entity, self::getEntityName());
+    }
+
+    abstract public function getEntityName();
 } 

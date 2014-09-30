@@ -10,11 +10,11 @@ namespace JulienVinber\QobuzApiPhp\Entity\Repository;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntityRepository;
 
-class GenreRepository extends QobuzEntityRepository {
+class GenreRepository extends QobuzEntityRepository
+{
 
-    public function isEntityType($entity)
+    public function getEntityName()
     {
-        return is_a($entity, 'JulienVinber\QobuzApiPhp\Entity\Genre');
+        return 'JulienVinber\QobuzApiPhp\Entity\Genre';
     }
-
 } 

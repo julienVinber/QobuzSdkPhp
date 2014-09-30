@@ -1,9 +1,9 @@
 <?php
 /**
- * User.php
+ * Puchase.php
  * User: Julien
  * Date: 27/09/14
- * Time: 18:52
+ * Time: 19:19
  */
 
 namespace JulienVinber\QobuzApiPhp\Entity;
@@ -11,5 +11,5 @@ namespace JulienVinber\QobuzApiPhp\Entity;
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
 
 
-class User extends QobuzEntity {
+class Purchase extends QobuzEntity {
 }

@@ -10,11 +10,11 @@ namespace JulienVinber\QobuzApiPhp\Entity\Repository;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntityRepository;
 
-class TrackRepository extends QobuzEntityRepository {
+class TrackRepository extends QobuzEntityRepository
+{
 
-    public function isEntityType($entity)
+    public function getEntityName()
     {
-        return is_a($entity, 'JulienVinber\QobuzApiPhp\Entity\Track');
+        return 'JulienVinber\QobuzApiPhp\Entity\Track';
     }
-
 } 
