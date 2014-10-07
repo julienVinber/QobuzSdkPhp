@@ -9,6 +9,7 @@
 namespace JulienVinber\QobuzApiPhp\Entity;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
+use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntitySearchItem;
 use JulienVinber\QobuzApiPhp\Entity\Repository\GenreRepository;
 use JulienVinber\QobuzApiPhp\Entity\Repository\LabelRepository;
 use JulienVinber\QobuzApiPhp\Entity\Sub\Awards;
@@ -21,7 +22,7 @@ use JulienVinber\QobuzApiPhp\Entity\Repository\ArtistRepository;
  * Class Album
  * @package JulienVinber\QobuzApiPhp\Entity
  */
-class Album extends QobuzEntity
+class Album extends QobuzEntity implements QobuzEntitySearchItem
 {
     protected $id = null;
     protected $title = null;
@@ -226,5 +227,10 @@ class Album extends QobuzEntity
     public function getUrl()
     {
         return $this->url;
+    }
+
+    protected function getComplet()
+    {
+        // TODO: Implement getComplet() method.
     }
 }
