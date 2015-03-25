@@ -9,21 +9,24 @@
 namespace JulienVinber\QobuzApiPhp\Entity\Base;
 
 
+use JulienVinber\QobuzApiPhp\Entity\QobuzClient;
+
 abstract Class QobuzEntity
 {
+    protected $qobuzClient;
     protected $recupComplete = false;
 
-    public function __construct($json = null)
+    public function __construct(QobuzClient $qobuzClient, $value = null)
     {
-        if (is_null($json)) {
-            $this->parsJson($json);
+        $this->qobuzClient = $qobuzClient;
+        if (!is_null($value)) {
+            $this->initValeur($value);
         }
     }
-
-    protected function parsJson($json)
+    public function getValue($url, $paramGet)
     {
-        $value = json_decode($json);
-        $this->initValeur($value);
+        $retour = $this->qobuzClient->getValue($url, $paramGet);
+        $this->initValeur($retour);
     }
 
     protected function isRecupComplete()
