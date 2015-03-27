@@ -50,6 +50,31 @@ abstract Class QobuzEntity
         return $this->$propertyName;
     }
 
+    protected function setUneValeurSimple(&$jsonObject, $nomValeur)
+    {
+        if (isset($jsonObject->$nomValeur)) {
+            $this->$nomValeur = $jsonObject->$nomValeur;
+        }
+    }
+
+    protected function setUneValeurObjet(&$jsonObject, $nomValeur, $className)
+    {
+        if (isset($jsonObject->$nomValeur)) {
+            $this->$nomValeur = new $className( $this->qobuzClient, $jsonObject->$nomValeur);
+        }
+    }
+
+    protected function setUneValeurArray(&$jsonObject, $nomValeur)
+    {
+        if (isset($jsonObject->$nomValeur)) {
+            $this->$nomValeur = new \ArrayObject($jsonObject->$nomValeur);
+        }
+    }
+
     abstract protected function initValeur($jsonObject);
-    abstract protected function getComplet();
+
+    protected function getComplet()
+    {
+        //A définir si besoin
+    }
 } 

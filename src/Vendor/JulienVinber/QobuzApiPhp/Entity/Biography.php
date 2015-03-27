@@ -6,7 +6,7 @@
  * Time: 20:02
  */
 
-namespace JulienVinber\QobuzApiPhp\Entity\Sub;
+namespace JulienVinber\QobuzApiPhp\Entity;
 
 
 class Biography {

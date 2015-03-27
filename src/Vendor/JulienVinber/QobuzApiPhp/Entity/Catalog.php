@@ -12,11 +12,11 @@ use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
 
 
 class Catalog extends QobuzEntity {
-    protected $query = null;
-    protected $tracks = null;
-    protected $albums = null;
-    protected $playlists = null;
-    protected $suggestions = null;
+    protected $query;
+    protected $tracks;
+    protected $albums;
+    protected $playlists;
+    protected $suggestions;
 
     protected function initValeur($jsonObject)
     {
@@ -86,10 +86,5 @@ class Catalog extends QobuzEntity {
     public function getTracks()
     {
         return $this->tracks;
-    }
-
-    protected function getComplet()
-    {
-        // TODO: Implement getComplet() method.
     }
 }

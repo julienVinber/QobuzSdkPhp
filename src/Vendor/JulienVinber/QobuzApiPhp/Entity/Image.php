@@ -6,7 +6,7 @@
  * Time: 18:55
  */
 
-namespace JulienVinber\QobuzApiPhp\Entity\Sub;
+namespace JulienVinber\QobuzApiPhp\Entity;
 
 
 class Image {

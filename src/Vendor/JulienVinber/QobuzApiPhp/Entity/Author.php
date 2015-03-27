@@ -6,17 +6,17 @@
  * Time: 21:05
  */
 
-namespace JulienVinber\QobuzApiPhp\Entity\Sub;
+namespace JulienVinber\QobuzApiPhp\Entity;
 
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
 
 class Author extends QobuzEntity
 {
-    protected $id = null;
-    protected $name = null;
-    protected $avatar = null;
-    protected $comments_count = null;
+    protected $id;
+    protected $name;
+    protected $avatar;
+    protected $comments_count;
 
     protected function initValeur($jsonObject)
     {
@@ -72,10 +72,5 @@ class Author extends QobuzEntity
     public function getRecupComplete()
     {
         return $this->recupComplete;
-    }
-
-    protected function getComplet()
-    {
-        // TODO: Implement getComplet() method.
     }
 }

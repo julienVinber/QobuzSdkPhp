@@ -9,16 +9,16 @@
 namespace JulienVinber\QobuzApiPhp\Entity;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
-use JulienVinber\QobuzApiPhp\Entity\Sub\Biography;
-use JulienVinber\QobuzApiPhp\Entity\Sub\Image;
+use JulienVinber\QobuzApiPhp\Entity\Biography;
+use JulienVinber\QobuzApiPhp\Entity\Image;
 
 
 class Artist extends QobuzEntity {
-    protected $id = null;
-    protected $name = null;
-    protected $slug = null;
-    protected $image = null;
-    protected $biography = null;
+    protected $id;
+    protected $name;
+    protected $slug;
+    protected $image;
+    protected $biography;
 
     protected function initValeur($jsonObject)
     {
@@ -85,10 +85,5 @@ class Artist extends QobuzEntity {
     public function getSlug()
     {
         return $this->slug;
-    }
-
-    protected function getComplet()
-    {
-        // TODO: Implement getComplet() method.
     }
 }

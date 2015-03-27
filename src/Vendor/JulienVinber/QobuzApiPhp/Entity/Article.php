@@ -9,23 +9,22 @@
 namespace JulienVinber\QobuzApiPhp\Entity;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
-use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntitySearchItem;
-use JulienVinber\QobuzApiPhp\Entity\Sub\Image;
+use JulienVinber\QobuzApiPhp\Entity\Image;
 
 
-class Article extends QobuzEntity implements QobuzEntitySearchItem
+class Article extends QobuzEntity
 {
-    protected $id = null;
-    protected $title = null;
-    protected $description = null;
-    protected $published_at = null;
-    protected $abstract = null;
-    protected $content = null;
-    protected $url = null;
-    protected $author = null;
-    protected $source = null;
-    protected $category = null;
-    protected $image = null;
+    protected $id;
+    protected $title;
+    protected $description;
+    protected $published_at;
+    protected $abstract;
+    protected $content;
+    protected $url;
+    protected $author;
+    protected $source;
+    protected $category;
+    protected $image;
 
     protected function initValeur($jsonObject)
     {
@@ -158,10 +157,5 @@ class Article extends QobuzEntity implements QobuzEntitySearchItem
     public function getUrl()
     {
         return $this->url;
-    }
-
-    protected function getComplet()
-    {
-        // TODO: Implement getComplet() method.
     }
 }

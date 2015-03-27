@@ -13,12 +13,12 @@ use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
 
 class Collection extends QobuzEntity
 {
-    protected $offset = null;
-    protected $limit = null;
-    protected $total = null;
-    protected $items = null;
+    protected $offset;
+    protected $limit;
+    protected $total;
+    protected $items;
 
-    protected $typeItems = null;
+    protected $typeItems;
     const TYPE_ALBUMS = 0;
     const TYPE_ARTISTS = 1;
     const TYPE_TRACKS = 2;
@@ -148,10 +148,5 @@ class Collection extends QobuzEntity
     public function setTypeItems($typeItems)
     {
         $this->typeItems = $typeItems;
-    }
-
-    protected function getComplet()
-    {
-        // TODO: Implement getComplet() method.
     }
 }

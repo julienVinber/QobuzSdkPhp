@@ -9,9 +9,8 @@
 namespace JulienVinber\QobuzApiPhp\Entity;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
-use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntitySearchItem;
 
 
-class Playlist extends QobuzEntity implements QobuzEntitySearchItem
+class Playlist extends QobuzEntity
 {
 }

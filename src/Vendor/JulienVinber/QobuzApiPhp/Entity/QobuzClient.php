@@ -13,7 +13,7 @@ class QobuzClient
 {
     protected $app_id;
     protected $app_secret;
-    protected $user_auth_token = null;
+    protected $user_auth_token;
 
     function __construct($app_id, $app_secret)
     {

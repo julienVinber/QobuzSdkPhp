@@ -9,20 +9,20 @@
 namespace JulienVinber\QobuzApiPhp\Entity;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
-use JulienVinber\QobuzApiPhp\Entity\Sub\Author;
+use JulienVinber\QobuzApiPhp\Entity\Author;
 
 
-class Comment extends QobuzEntity implements QobuzEntitySearchItem
+class Comment extends QobuzEntity
 {
-    protected $id = null;
-    protected $content = null;
-    protected $created_at = null;
-    protected $updated_at = null;
-    protected $language = null;
-    protected $flag = null;
-    protected $is_flagged = null;
-    protected $author = null;
-    protected $user_rating = null;
+    protected $id;
+    protected $content;
+    protected $created_at;
+    protected $updated_at;
+    protected $language;
+    protected $flag;
+    protected $is_flagged;
+    protected $author;
+    protected $user_rating;
 
     protected function initValeur($jsonObject)
     {
@@ -133,10 +133,5 @@ class Comment extends QobuzEntity implements QobuzEntitySearchItem
     public function getUserRating()
     {
         return $this->user_rating;
-    }
-
-    protected function getComplet()
-    {
-        // TODO: Implement getComplet() method.
     }
 }

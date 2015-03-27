@@ -6,7 +6,7 @@
  * Time: 19:38
  */
 
-namespace JulienVinber\QobuzApiPhp\Entity\Sub;
+namespace JulienVinber\QobuzApiPhp\Entity;
 
 
 class Goodies {

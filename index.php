@@ -16,6 +16,6 @@ $qobuzClient = new \JulienVinber\QobuzApiPhp\Entity\QobuzClient($app_id, $app_se
 
 $user = new \JulienVinber\QobuzApiPhp\Entity\User($qobuzClient);
 
-$user->get($login, '', $mdp);
+$user->login($login, '', $mdp);
 
-//var_dump($user);
+var_dump($user);

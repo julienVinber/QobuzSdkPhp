@@ -9,12 +9,11 @@
 namespace JulienVinber\QobuzApiPhp\Entity;
 
 use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntity;
-use JulienVinber\QobuzApiPhp\Entity\Base\QobuzEntitySearchItem;
 use JulienVinber\QobuzApiPhp\Entity\Repository\GenreRepository;
 use JulienVinber\QobuzApiPhp\Entity\Repository\LabelRepository;
-use JulienVinber\QobuzApiPhp\Entity\Sub\Awards;
-use JulienVinber\QobuzApiPhp\Entity\Sub\Goodies;
-use JulienVinber\QobuzApiPhp\Entity\Sub\Image;
+use JulienVinber\QobuzApiPhp\Entity\Awards;
+use JulienVinber\QobuzApiPhp\Entity\Goodies;
+use JulienVinber\QobuzApiPhp\Entity\Image;
 use JulienVinber\QobuzApiPhp\Entity\Repository\ArtistRepository;
 
 
@@ -22,21 +21,21 @@ use JulienVinber\QobuzApiPhp\Entity\Repository\ArtistRepository;
  * Class Album
  * @package JulienVinber\QobuzApiPhp\Entity
  */
-class Album extends QobuzEntity implements QobuzEntitySearchItem
+class Album extends QobuzEntity
 {
-    protected $id = null;
-    protected $title = null;
-    protected $released_at = null;
-    protected $purchasable = null;
-    protected $image = null;
-    protected $artist = null;
-    protected $label = null;
-    protected $genre = null;
-    protected $description = null;
-    protected $url = null;
-    protected $awards = null;
-    protected $goodies = null;
-    protected $tracks = null;
+    protected $id;
+    protected $title;
+    protected $released_at;
+    protected $purchasable;
+    protected $image;
+    protected $artist;
+    protected $label;
+    protected $genre;
+    protected $description;
+    protected $url;
+    protected $awards;
+    protected $goodies;
+    protected $tracks;
 
     const BASEURL_GET = 'album/get';
     const BASEURL_GETFEATURED = 'album/getFeatured';
@@ -227,10 +226,5 @@ class Album extends QobuzEntity implements QobuzEntitySearchItem
     public function getUrl()
     {
         return $this->url;
-    }
-
-    protected function getComplet()
-    {
-        // TODO: Implement getComplet() method.
     }
 }
